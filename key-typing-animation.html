@@ -5,60 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>key-typing-animation using CSS</title>
     <style>
         @keyframes cursor-blink{
-            50%  {
-            border-right: 0.5rem solid #fff;}
+            50%  {border-right: 0.5rem solid #fff;}
         }
         @keyframes typing-intro{
             0% {width: 0;}
             70%, 100% {width: 19ch;}
         }
-        @keyframes typing-love-fe{
+        @keyframes typing-love{
             0% {width: 0;}
-            100% {width: 17ch;}
+            100% {width: 7ch;}
         }
-        @keyframes erase-love{
-            0% {width: 17ch; }
-            100% {width: 7ch; }
+        @keyframes typing-fe{
+            0% {width: 0;}
+            50%, 100% {width: 10ch;}
         }
-        
-        div{
+        @keyframes typing-design{
+            0% {width: 0}
+            50%, 100% {width: 7ch;}
+        }
+        @keyframes typing-twd{
+            0% {width: 0}
+            50%, 100% {width: 17ch;}
+        }
+        @keyframes erase-fe{
+            0% {width: 10ch; }
+            70%, 100% {width: 0; }
+        }
+        @keyframes erase-design{
+            0% {width: 7ch; }
+            70%, 100% {width: 0; }
+        }
+        .container{
             width: 50%;
             margin: 0 auto;
             background-color:rosybrown;
             height: 500px;
             color: rosybrown;
+            font-size:0;
         }
-        h1 {
-            font: bold 300% Consolas, Monaco, monospace;
+        .container h1 {
+            display: inline-block;
+            font: bold 50px Consolas, Monaco, monospace;
             position: relative;
             top: 50%;
             background-color: powderblue;
             overflow: hidden;
             white-space: nowrap;
             border-right: transparent;
-            
+            width: 0ch;
+            margin: 0;
+            padding: 0;
         }
         .intro{
-            width: 0;
+            /* width: 19ch; */
             animation: cursor-blink 0.8s step-end 9,
             typing-intro 5s steps(19, end) 2s forwards;
         }
         .love{
-            width: 0;
-            animation: cursor-blink 0.8s step-end infinite 7s,
-            typing-love-fe 4s steps(17, end) 9s forwards,
-            erase-love 3s steps(10, end) 15s forwards;
+            /* width: 6ch; */
+            animation: cursor-blink 0.8s step-end 6 7s,
+            typing-love 2s steps(7, end) 9s forwards;
+        }
+        .fe{
+            /* width: 10ch; */
+            animation: cursor-blink 0.8s step-end 8 12s,
+            typing-fe 3s steps(10, end) 12s,
+            erase-fe 3s steps(10, end) 15s forwards;
+        }
+        .design{
+            /* width: 7ch; */
+            animation: cursor-blink 0.8s step-end 10 18s,
+            typing-design 3s steps(7, end) 20s,
+            erase-design 3s steps(7, end) 23s forwards;
+        }
+        .twd{
+            /* width: 17ch; */
+            animation: cursor-blink 0.8s step-end infinite 26s,
+            typing-twd 6s steps(17, end) 28s forwards;
         }
     </style>
 </head>
 
 <body>
-    <div>
+    <div class="container">
         <h1 class="intro">Hi! I am Seo-Hyung.</h1><br>
-        <h1 class="love">I love Front-end.</h1>
+        <h1 class="love">I love</h1>
+        <h1 class="fe">Front-end.</h1>
+        <h1 class="design">Design.</h1>
+        <h1 class="twd">The Walking Dead.</h1>
     </div>
     <!-- 글자수 칸이 동일해야하기 때문에 monospace 폰트로만 가능 -->
 </body>
