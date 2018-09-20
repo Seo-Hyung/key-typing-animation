@@ -1,2 +1,4 @@
-# key-typing-animation
+## key-typing-animation
 Pure CSS code of key-typing simulation
+
+## simple GIF capture

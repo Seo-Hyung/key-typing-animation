@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes cursor-blink{
+            50%  {
+            border-right: 0.5rem solid #fff;}
+        }
+        @keyframes typing-intro{
+            0% {width: 0;}
+            70%, 100% {width: 19ch;}
+        }
+        @keyframes typing-love-fe{
+            0% {width: 0;}
+            100% {width: 17ch;}
+        }
+        @keyframes erase-love{
+            0% {width: 17ch; }
+            100% {width: 7ch; }
+        }
+        
+        div{
+            width: 50%;
+            margin: 0 auto;
+            background-color:rosybrown;
+            height: 500px;
+            color: rosybrown;
+        }
+        h1 {
+            font: bold 300% Consolas, Monaco, monospace;
+            position: relative;
+            top: 50%;
+            background-color: powderblue;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: transparent;
+            
+        }
+        .intro{
+            width: 0;
+            animation: cursor-blink 0.8s step-end 9,
+            typing-intro 5s steps(19, end) 2s forwards;
+        }
+        .love{
+            width: 0;
+            animation: cursor-blink 0.8s step-end infinite 7s,
+            typing-love-fe 4s steps(17, end) 9s forwards,
+            erase-love 3s steps(10, end) 15s forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="intro">Hi! I am Seo-Hyung.</h1><br>
+        <h1 class="love">I love Front-end.</h1>
+    </div>
+    <!-- 글자수 칸이 동일해야하기 때문에 monospace 폰트로만 가능 -->
+</body>
+
+</html>
